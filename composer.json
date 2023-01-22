@@ -1,0 +1,32 @@
+{
+    "name": "mushti/raptor",
+    "description": "The Raptor Framework.",
+    "keywords": ["framework", "raptor", "php"],
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": "^8.2",
+        "httpsoft/http-message": "^1.0",
+        "httpsoft/http-server-request": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Http\\": "http/",
+            "Raptor\\": "raptor/"
+        }
+    },
+    "autoload-dev": {
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ]
+    }
+}
